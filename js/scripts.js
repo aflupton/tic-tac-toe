@@ -5,16 +5,8 @@ var player = {
 }
 
 
-// var space1;
-// var space2;
-// var space3;
-// var space4;
-// var space5;
-// var space6;
-// var space7;
-// var space8;
-// var space9;
 
+player.player1
 
 
 
@@ -44,13 +36,16 @@ function WinningCombo (index1, index2, index3) {
 
 
 $(document).ready(function() {
-
-
+  var currentPlayer = 'player1';
   $(".grid-item").click(function() {
-    $(this).append(player.player2);
-
-
-
+    $(this).append(player[currentPlayer]);
+    if (currentPlayer === 'player1') {
+      currentPlayer = 'player2';
+    } else {
+      currentPlayer = 'player1';
+    }
+    $("#turn1").toggle();
+    $("#turn2").toggle();
   });
 
 });
