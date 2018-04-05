@@ -47,17 +47,17 @@ var player = {
 $(document).ready(function() {
   var currentPlayer = 'player1';
   $(".grid-item").click(function() {
-    $(this).text(player[currentPlayer]);
-      if (currentPlayer === 'player1') {
-        currentPlayer = 'player2';
-      } else {
-        currentPlayer = 'player1';
-      }
+    if ($(this).text() === ("")) {
+      $(this).text(player[currentPlayer]);
+        if (currentPlayer === 'player1') {
+          currentPlayer = 'player2';
+        } else {
+          currentPlayer = 'player1';
+        }
+        $("#turn1").toggle();
+        $("#turn2").toggle();
+      } else {}
 
-
-
-    $("#turn1").toggle();
-    $("#turn2").toggle();
   });
 
 
